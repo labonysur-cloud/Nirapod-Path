@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" style="background:#0f172a; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <defs>
+    <pattern id="grid-base" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+    </pattern>
+    <filter id="glow-base" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#grid-base)" />
+
+  <!-- Header -->
+  <text x="40" y="44" fill="#f8fafc" font-size="18" font-weight="700">SMART ESCAPE — BASELINE ROUTE</text>
+  <text x="40" y="68" fill="#94a3b8" font-size="12">AI DevFest 2026 Practice Challenge Benchmark</text>
+
+  <!-- Status card -->
+  <g transform="translate(480, 26)">
+    <rect width="280" height="52" rx="8" fill="#064e3b" stroke="#059669" stroke-width="1.5" />
+    <text x="16" y="24" fill="#a7f3d0" font-size="11" font-weight="600">ROUTE COMPUTED: R1 → E1</text>
+    <text x="16" y="42" fill="#ecfdf5" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">R1 - C1 - C2 - E1 | Total Cost: 7</text>
+  </g>
+
+  <!-- Inactive corridors -->
+  <line x1="280" y1="180" x2="280" y2="340" stroke="#334155" stroke-width="3" />
+  <line x1="120" y1="340" x2="280" y2="340" stroke="#334155" stroke-width="3" />
+  <line x1="280" y1="340" x2="440" y2="340" stroke="#334155" stroke-width="3" />
+  <line x1="440" y1="340" x2="600" y2="340" stroke="#334155" stroke-width="3" />
+
+  <!-- Inactive corridor costs -->
+  <g transform="translate(280, 260)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#1e293b" stroke="#475569" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#94a3b8" font-size="11" font-family="monospace">4</text>
+  </g>
+  <g transform="translate(200, 340)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#1e293b" stroke="#475569" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#94a3b8" font-size="11" font-family="monospace">2</text>
+  </g>
+  <g transform="translate(360, 340)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#1e293b" stroke="#475569" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#94a3b8" font-size="11" font-family="monospace">3</text>
+  </g>
+  <g transform="translate(520, 340)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#1e293b" stroke="#475569" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#94a3b8" font-size="11" font-family="monospace">2</text>
+  </g>
+
+  <!-- Active Route Corridors (Glowing Emerald) -->
+  <line x1="120" y1="180" x2="280" y2="180" stroke="#10b981" stroke-width="10" stroke-opacity="0.3" filter="url(#glow-base)" />
+  <line x1="120" y1="180" x2="280" y2="180" stroke="#10b981" stroke-width="5" />
+  <line x1="280" y1="180" x2="440" y2="180" stroke="#10b981" stroke-width="10" stroke-opacity="0.3" filter="url(#glow-base)" />
+  <line x1="280" y1="180" x2="440" y2="180" stroke="#10b981" stroke-width="5" />
+  <line x1="440" y1="180" x2="600" y2="180" stroke="#10b981" stroke-width="10" stroke-opacity="0.3" filter="url(#glow-base)" />
+  <line x1="440" y1="180" x2="600" y2="180" stroke="#10b981" stroke-width="5" />
+
+  <!-- Active edge costs -->
+  <g transform="translate(200, 180)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1.5" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#a7f3d0" font-size="11" font-family="monospace" font-weight="700">2</text>
+  </g>
+  <g transform="translate(360, 180)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1.5" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#a7f3d0" font-size="11" font-family="monospace" font-weight="700">3</text>
+  </g>
+  <g transform="translate(520, 180)">
+    <rect x="-12" y="-10" width="24" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1.5" />
+    <text text-anchor="middle" dominant-baseline="central" fill="#a7f3d0" font-size="11" font-family="monospace" font-weight="700">2</text>
+  </g>
+
+  <!-- Inactive Nodes (Bottom Row) -->
+  <g transform="translate(120, 340)">
+    <rect x="-22" y="-22" width="44" height="44" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text y="6" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="monospace" font-weight="700">R2</text>
+    <text y="36" text-anchor="middle" fill="#64748b" font-size="11">Room 2</text>
+  </g>
+  <g transform="translate(280, 340)">
+    <circle r="20" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text y="5" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="monospace" font-weight="700">C3</text>
+    <text y="36" text-anchor="middle" fill="#64748b" font-size="11">Corridor 3</text>
+  </g>
+  <g transform="translate(440, 340)">
+    <circle r="20" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text y="5" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="monospace" font-weight="700">C4</text>
+    <text y="36" text-anchor="middle" fill="#64748b" font-size="11">Corridor 4</text>
+  </g>
+  <g transform="translate(600, 340)">
+    <rect x="-24" y="-24" width="48" height="48" rx="8" fill="#022c22" stroke="#059669" stroke-width="1.5" />
+    <text y="6" text-anchor="middle" fill="#6ee7b7" font-size="12" font-family="monospace" font-weight="700">E2</text>
+    <text y="36" text-anchor="middle" fill="#64748b" font-size="11">Exit 2</text>
+  </g>
+
+  <!-- Active Nodes (Top Row) -->
+  <!-- R1 (Start) -->
+  <g transform="translate(120, 180)">
+    <circle r="30" fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.5" />
+    <rect x="-24" y="-24" width="48" height="48" rx="8" fill="#0369a1" stroke="#38bdf8" stroke-width="2.5" />
+    <text y="6" text-anchor="middle" fill="#ffffff" font-size="12" font-family="monospace" font-weight="700">R1</text>
+    <rect x="-20" y="-34" width="40" height="13" rx="2" fill="#0284c7" />
+    <text x="0" y="-24" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="700">START</text>
+    <text y="36" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="600">Room 1</text>
+  </g>
+
+  <!-- C1 -->
+  <g transform="translate(280, 180)">
+    <circle r="22" fill="#064e3b" stroke="#10b981" stroke-width="2.5" />
+    <text y="5" text-anchor="middle" fill="#a7f3d0" font-size="12" font-family="monospace" font-weight="700">C1</text>
+    <text y="36" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">Corridor 1</text>
+  </g>
+
+  <!-- C2 -->
+  <g transform="translate(440, 180)">
+    <circle r="22" fill="#064e3b" stroke="#10b981" stroke-width="2.5" />
+    <text y="5" text-anchor="middle" fill="#a7f3d0" font-size="12" font-family="monospace" font-weight="700">C2</text>
+    <text y="36" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">Corridor 2</text>
+  </g>
+
+  <!-- E1 (Destination Exit) -->
+  <g transform="translate(600, 180)">
+    <rect x="-25" y="-25" width="50" height="50" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="3" />
+    <text y="6" text-anchor="middle" fill="#a7f3d0" font-size="12" font-family="monospace" font-weight="700">E1</text>
+    <rect x="-22" y="-35" width="44" height="13" rx="2" fill="#059669" />
+    <text x="0" y="-25" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="700">EXIT</text>
+    <text y="36" text-anchor="middle" fill="#34d399" font-size="11" font-weight="600">Exit 1</text>
+  </g>
+
+  <!-- Footnote -->
+  <text x="40" y="450" fill="#64748b" font-size="11">Smart Escape Evacuation Simulator — Baseline Route Check §4.1</text>
+</svg>
