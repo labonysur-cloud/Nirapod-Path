@@ -99,7 +99,7 @@ export const InspectorPanel: React.FC = () => {
               <span className="font-medium text-slate-800 dark:text-slate-200">{node.label}</span>
             </div>
             <div className="p-2 rounded bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800">
-              <span className="text-slate-500 text-[10px] block">Coordinates (x, y)</span>
+              <span className="text-slate-500 text-[10px] block">{t.coordinates}</span>
               <span className="font-mono text-slate-800 dark:text-slate-200">
                 {node.x}, {node.y}
               </span>
@@ -138,7 +138,7 @@ export const InspectorPanel: React.FC = () => {
             }`}
           >
             <Compass className="w-3.5 h-3.5" />
-            <span>{isStart ? 'Currently Starting Location' : t.actionSetStart}</span>
+            <span>{isStart ? t.currentlyStarting : t.actionSetStart}</span>
           </button>
         )}
 

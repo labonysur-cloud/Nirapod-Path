@@ -64,7 +64,7 @@ export const RoutePanel: React.FC = () => {
               </div>
               <p className="text-xs text-amber-700 dark:text-amber-300/80 mt-1">
                 {startNodeId
-                  ? 'No accessible escape route reaches an open emergency exit. Check blocked corridors or closed exits.'
+                  ? t.noRouteInstructions
                   : t.statusSelectStart}
               </p>
             </div>
@@ -81,7 +81,7 @@ export const RoutePanel: React.FC = () => {
                 {t.statusStartBlocked}
               </div>
               <p className="text-xs text-red-700 dark:text-red-300/80 mt-1">
-                Selected node ({startNodeId}) is currently marked as blocked. Unblock it or select another room.
+                {t.blockedStartInstructions.replace('{node}', startNodeId || '')}
               </p>
             </div>
           </div>
@@ -253,7 +253,7 @@ export const RoutePanel: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="font-mono tabular-nums text-slate-600 dark:text-slate-300">
-                    Cost: {alt.totalCost}
+                    {t.costShort}: {alt.totalCost}
                   </span>
                   <span className="text-[10px] font-mono text-amber-600 dark:text-amber-400">
                     +{alt.totalCost - routeResult.totalCost}

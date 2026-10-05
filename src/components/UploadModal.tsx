@@ -28,7 +28,7 @@ export const UploadModal: React.FC = () => {
       }
     } catch (e: any) {
       setIsValid(false);
-      setErrors([`JSON Syntax Error: ${e.message}`]);
+      setErrors([`${t.jsonSyntaxError}: ${e.message}`]);
     }
   };
 
@@ -52,7 +52,7 @@ export const UploadModal: React.FC = () => {
         }
       } catch (err: any) {
         setIsValid(false);
-        setErrors([`JSON Syntax Error: ${err.message}`]);
+        setErrors([`${t.jsonSyntaxError}: ${err.message}`]);
       }
     };
     reader.readAsText(file);
@@ -79,7 +79,7 @@ export const UploadModal: React.FC = () => {
                 {t.customUpload}
               </h2>
               <p className="text-xs text-slate-500 dark:text-neutral-400">
-                {t.uploadHint} (2–60 nodes, 1–150 corridors)
+                {t.uploadHint} (2–60 {t.nodesLabel.toLowerCase()}, 1–150 {t.corridorsLabel.toLowerCase()})
               </p>
             </div>
           </div>
@@ -97,7 +97,7 @@ export const UploadModal: React.FC = () => {
             <div className="flex items-center gap-2">
               <label className="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-xs font-semibold text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition-colors">
                 <FileCode2 className="w-4 h-4" />
-                <span>Choose .json file</span>
+                <span>{t.uploadFile}</span>
                 <input type="file" accept=".json" onChange={handleFileUpload} className="hidden" />
               </label>
 
@@ -105,10 +105,10 @@ export const UploadModal: React.FC = () => {
                 href="/building.json"
                 download="building.json"
                 className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-300 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-xs font-semibold text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition-colors"
-                title="Download official PDF sample building.json"
+                title={t.downloadSample}
               >
                 <Download className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                <span>Get building.json</span>
+                <span>{t.downloadSample}</span>
               </a>
             </div>
 
@@ -116,13 +116,13 @@ export const UploadModal: React.FC = () => {
               onClick={handleLoadSample}
               className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
             >
-              Load East Annex (PDF Sample)
+              {t.loadSample}
             </button>
           </div>
 
           <div className="flex flex-col gap-1.5 flex-1">
             <label htmlFor="json-textarea" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-              JSON Dataset Content
+              {t.jsonContent}
             </label>
             <textarea
               id="json-textarea"
@@ -132,7 +132,7 @@ export const UploadModal: React.FC = () => {
                 setIsValid(null);
                 setErrors([]);
               }}
-              placeholder='{\n  "building": "Engineering Annex",\n  "nodes": [...],\n  "edges": [...],\n  "initial_state": {...}\n}'
+              placeholder={t.jsonPlaceholder}
               className="w-full h-64 p-3 font-mono text-xs bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900 dark:text-slate-100"
             />
           </div>
@@ -155,7 +155,7 @@ export const UploadModal: React.FC = () => {
           {isValid === true && (
             <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 flex items-center gap-2 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
               <CheckCircle2 className="w-4 h-4" />
-              <span>Dataset schema verified and valid according to AI DevFest specifications.</span>
+              <span>{t.datasetVerified}</span>
             </div>
           )}
         </div>
@@ -166,14 +166,14 @@ export const UploadModal: React.FC = () => {
             onClick={() => setIsUploadModalOpen(false)}
             className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg transition-colors"
           >
-            Cancel
+            {t.cancel}
           </button>
           <button
             onClick={handleValidateAndLoad}
             disabled={!jsonText.trim()}
             className="px-4 py-2 text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg transition-colors shadow-sm"
           >
-            Validate & Apply Map
+            {t.validateAndApply}
           </button>
         </div>
       </div>

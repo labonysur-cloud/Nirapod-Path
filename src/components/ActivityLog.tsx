@@ -208,7 +208,13 @@ export const ActivityLog: React.FC = () => {
                       {title}
                     </span>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-neutral-500">
-                      {entry.category}
+                      {entry.category === 'hazard'
+                        ? t.categoryHazard
+                        : entry.category === 'route'
+                        ? t.categoryRoute
+                        : entry.category === 'start'
+                        ? t.categoryStart
+                        : t.categorySystem}
                     </span>
                   </div>
 

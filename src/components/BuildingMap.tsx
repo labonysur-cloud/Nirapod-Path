@@ -177,7 +177,7 @@ export const BuildingMap: React.FC = () => {
         </span>
         <span className="text-slate-600">·</span>
         <span className="text-xs text-slate-400 tabular-nums">
-          {buildingData.nodes.length} Nodes · {buildingData.edges.length} Corridors
+          {buildingData.nodes.length} {t.nodesLabel} · {buildingData.edges.length} {t.corridorsLabel}
         </span>
       </div>
 
@@ -682,7 +682,7 @@ export const BuildingMap: React.FC = () => {
                       fontWeight="700"
                       letterSpacing="0.05em"
                     >
-                      START
+                      {t.mapStartBadge}
                     </text>
                   </g>
                 )}
@@ -699,7 +699,7 @@ export const BuildingMap: React.FC = () => {
                       fontWeight="700"
                       letterSpacing="0.05em"
                     >
-                      {node.type === 'exit' ? 'CLOSED' : 'BLOCKED'}
+                      {node.type === 'exit' ? t.mapClosedBadge : t.mapBlockedBadge}
                     </text>
                   </g>
                 )}
@@ -765,7 +765,7 @@ export const BuildingMap: React.FC = () => {
         </div>
 
         <div className="text-[11px] text-slate-500 hidden sm:block">
-          Click node to select · Double-click to toggle hazard · Drag to pan
+          {t.mapInstructions}
         </div>
       </div>
     </div>

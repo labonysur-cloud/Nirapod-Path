@@ -34,7 +34,7 @@ const SimulatorDashboard: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-neutral-400">
-                  Interactive Building Map
+                  {t.interactiveMapTitle}
                 </span>
               </div>
 
@@ -42,7 +42,7 @@ const SimulatorDashboard: React.FC = () => {
                 <button
                   onClick={() => exportMapAsPng('nirapod-path-map.png')}
                   className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-neutral-300 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 rounded-lg px-2.5 py-1.5 shadow-xs transition-colors"
-                  title="Export PNG map"
+                  title={t.exportPng}
                 >
                   <Download className="w-3.5 h-3.5 text-slate-500" />
                   <span>PNG</span>
@@ -50,7 +50,7 @@ const SimulatorDashboard: React.FC = () => {
                 <button
                   onClick={() => exportMapAsSvg('nirapod-path-map.svg')}
                   className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 dark:text-neutral-300 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 rounded-lg px-2.5 py-1.5 shadow-xs transition-colors"
-                  title="Export SVG vector"
+                  title={t.exportSvg}
                 >
                   <Download className="w-3.5 h-3.5 text-slate-500" />
                   <span>SVG</span>
@@ -87,9 +87,9 @@ const SimulatorDashboard: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4 text-[11px] text-slate-500 dark:text-neutral-500">
-            <span>Client-side only · Zero backend</span>
+            <span>{t.footerClientSide} · {t.footerZeroBackend}</span>
             <span>·</span>
-            <span>MIT License</span>
+            <span>{t.footerLicense}</span>
           </div>
         </div>
       </footer>

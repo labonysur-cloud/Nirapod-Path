@@ -47,7 +47,7 @@ export const BenchmarkBar: React.FC = () => {
           </span>
         </div>
         <span className="text-[11px] text-slate-500 dark:text-neutral-400">
-          Official Rulebook §4.1
+          {t.rulebookReference}
         </span>
       </div>
 

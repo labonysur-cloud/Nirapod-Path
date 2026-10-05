@@ -71,7 +71,7 @@ export const SimulationStats: React.FC = () => {
         <div className="flex items-center gap-3">
           <span className="text-[11px] text-slate-500 dark:text-neutral-400 flex items-center gap-1.5">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Live Telemetry</span>
+            <span>{t.liveTelemetry}</span>
           </span>
         </div>
       </div>
@@ -116,16 +116,16 @@ export const SimulationStats: React.FC = () => {
               <button
                 onClick={toggleTimer}
                 className="p-1 rounded text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-neutral-800 transition-colors"
-                title={isTimerRunning ? 'Pause Timer' : 'Resume Timer'}
-                aria-label={isTimerRunning ? 'Pause Timer' : 'Resume Timer'}
+                title={isTimerRunning ? t.pauseTimer : t.resumeTimer}
+                aria-label={isTimerRunning ? t.pauseTimer : t.resumeTimer}
               >
                 {isTimerRunning ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
               </button>
               <button
                 onClick={resetTimer}
                 className="p-1 rounded text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-neutral-800 transition-colors"
-                title="Reset Timer"
-                aria-label="Reset Timer"
+                title={t.resetTimer}
+                aria-label={t.resetTimer}
               >
                 <RotateCcw className="w-3.5 h-3.5" />
               </button>
@@ -137,14 +137,14 @@ export const SimulationStats: React.FC = () => {
               {formatTime(timeElapsed)}
             </span>
             <span className="text-[11px] text-slate-400 font-mono">
-              {isTimerRunning ? 'active' : 'paused'}
+              {isTimerRunning ? t.timerActive : t.timerPaused}
             </span>
           </div>
 
           <div className="text-[11px] text-slate-500 dark:text-neutral-400 flex items-center justify-between">
-            <span>Status:</span>
+            <span>{t.statusLabel}:</span>
             <span className={`font-mono text-[10px] font-semibold uppercase ${isTimerRunning ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-400'}`}>
-              {isTimerRunning ? 'Running' : 'Halted'}
+              {isTimerRunning ? t.timerRunning : t.timerHalted}
             </span>
           </div>
         </div>
@@ -195,9 +195,9 @@ export const SimulationStats: React.FC = () => {
                     ? 'bg-white dark:bg-neutral-800 text-red-600 dark:text-red-400 font-bold shadow-xs'
                     : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                 }`}
-                title="Hazard Coverage % Trend"
+                title={t.hazardTrend}
               >
-                Hazard
+                {t.hazardShort}
               </button>
               <button
                 onClick={() => setActiveTrend('cost')}
@@ -206,9 +206,9 @@ export const SimulationStats: React.FC = () => {
                     ? 'bg-white dark:bg-neutral-800 text-emerald-600 dark:text-emerald-400 font-bold shadow-xs'
                     : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                 }`}
-                title="Route Cost Trend"
+                title={t.routeCostTrend}
               >
-                Cost
+                {t.routeCostShort}
               </button>
             </div>
           </div>
@@ -235,7 +235,7 @@ export const SimulationStats: React.FC = () => {
                         <div className="bg-slate-900 dark:bg-neutral-900 text-white border border-slate-700 dark:border-neutral-700 rounded px-2 py-1 text-[10px] font-mono shadow-md">
                           <span className="text-slate-400 block">{data.timeLabel}</span>
                           <span className="font-bold text-amber-300">
-                            {activeTrend === 'hazard' ? `Hazard: ${data.hazardCoverage}%` : `Cost: ${data.routeCost}`}
+                            {activeTrend === 'hazard' ? `${t.hazardShort}: ${data.hazardCoverage}%` : `${t.routeCostShort}: ${data.routeCost}`}
                           </span>
                         </div>
                       );
@@ -271,7 +271,7 @@ export const SimulationStats: React.FC = () => {
           <div className="text-[10px] text-slate-500 dark:text-neutral-400 flex items-center justify-between font-mono pt-1">
             <span>{sparklineData[0]?.timeLabel || '00:00'}</span>
             <span className="text-[11px] font-bold text-slate-700 dark:text-neutral-300">
-              {activeTrend === 'hazard' ? `${hazardCoveragePercentage}%` : `Cost: ${routeResult.totalCost}`}
+              {activeTrend === 'hazard' ? `${hazardCoveragePercentage}%` : `${t.routeCostShort}: ${routeResult.totalCost}`}
             </span>
             <span>{sparklineData[sparklineData.length - 1]?.timeLabel || '00:00'}</span>
           </div>

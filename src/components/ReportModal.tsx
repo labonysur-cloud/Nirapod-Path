@@ -404,7 +404,7 @@ export const ReportModal: React.FC = () => {
               </div>
 
               <div className="p-3 rounded-xl bg-slate-50 dark:bg-neutral-900/60 border border-slate-200 dark:border-neutral-800">
-                <span className="text-[11px] text-slate-500 dark:text-neutral-400">Compromised Elements</span>
+                <span className="text-[11px] text-slate-500 dark:text-neutral-400">{t.compromisedElements}</span>
                 <div className="text-lg font-mono font-bold text-red-600 dark:text-red-400 mt-1">
                   {compromisedElementsCount} / {totalElementsCount}
                 </div>
@@ -453,7 +453,7 @@ export const ReportModal: React.FC = () => {
                 {t.reportAuditLog} ({activityLog.length})
               </h3>
               <span className="text-[10px] text-slate-400 dark:text-neutral-500 font-mono">
-                Showing latest events
+                {t.showingLatestEvents}
               </span>
             </div>
 

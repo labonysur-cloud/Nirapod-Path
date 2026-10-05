@@ -62,7 +62,7 @@ export const HazardSummary: React.FC = () => {
                   toggleNodeBlocked(nodeId);
                 }}
                 className="text-red-400 hover:text-red-700 dark:hover:text-red-200 p-0.5"
-                title="Unblock"
+                title={t.unblockTooltip}
               >
                 <X className="w-3 h-3" />
               </button>
@@ -89,7 +89,7 @@ export const HazardSummary: React.FC = () => {
                   toggleEdgeBlocked(edgeId);
                 }}
                 className="text-amber-400 hover:text-amber-700 dark:hover:text-amber-200 p-0.5"
-                title="Unblock"
+                title={t.unblockTooltip}
               >
                 <X className="w-3 h-3" />
               </button>
@@ -116,7 +116,7 @@ export const HazardSummary: React.FC = () => {
                   toggleExitClosed(exitId);
                 }}
                 className="text-red-400 hover:text-red-700 dark:hover:text-red-200 p-0.5"
-                title="Reopen"
+                title={t.reopenTooltip}
               >
                 <X className="w-3 h-3" />
               </button>
