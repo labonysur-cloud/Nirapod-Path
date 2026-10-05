@@ -4,7 +4,7 @@
 **Project Name**: Nirapod Path (নিরাপদ পথ)  
 **Participant Name**: [NAME]  
 **Registration Number**: [REGISTRATION NUMBER]  
-**Live HTTPS URL**: [https://ais-pre-llfprs6emua2bokc6ofvpi-815078527211.asia-east1.run.app](https://ais-pre-llfprs6emua2bokc6ofvpi-815078527211.asia-east1.run.app)  
+**Live HTTPS URL**: https://nirapod-path.vercel.app/ 
 
 ---
 
